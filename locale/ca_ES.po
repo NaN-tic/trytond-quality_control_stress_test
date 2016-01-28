@@ -1,0 +1,243 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:quality.qualitative.template.line,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.qualitative.template.line,template_environments:"
+msgid "Stress Environments"
+msgstr "Entorns d'estrès"
+
+msgctxt "field:quality.qualitative.test.line,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.qualitative.test.line,test_environments:"
+msgid "Stress Environments"
+msgstr "Entorns d'estrès"
+
+msgctxt "field:quality.quantitative.template.line,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.quantitative.template.line,template_environments:"
+msgid "Stress Environments"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.quantitative.test.line,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.quantitative.test.line,test_environments:"
+msgid "Stress Environments"
+msgstr "Entorns d'estrès"
+
+msgctxt "field:quality.stress_environment,create_date:"
+msgid "Create Date"
+msgstr "Data de creació"
+
+msgctxt "field:quality.stress_environment,create_uid:"
+msgid "Create User"
+msgstr "Usuari de creació"
+
+msgctxt "field:quality.stress_environment,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:quality.stress_environment,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:quality.stress_environment,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:quality.stress_environment,write_date:"
+msgid "Write Date"
+msgstr "Data modificación"
+
+msgctxt "field:quality.stress_environment,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:quality.stress_environment-quality.template,create_date:"
+msgid "Create Date"
+msgstr "Data de creació"
+
+msgctxt "field:quality.stress_environment-quality.template,create_uid:"
+msgid "Create User"
+msgstr "Usuari de creació"
+
+msgctxt "field:quality.stress_environment-quality.template,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.stress_environment-quality.template,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:quality.stress_environment-quality.template,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:quality.stress_environment-quality.template,template:"
+msgid "Quality Template"
+msgstr "Plantilla de qualitat"
+
+msgctxt "field:quality.stress_environment-quality.template,write_date:"
+msgid "Write Date"
+msgstr "Data modificación"
+
+msgctxt "field:quality.stress_environment-quality.template,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:quality.stress_environment-quality.test,create_date:"
+msgid "Create Date"
+msgstr "Data de creació"
+
+msgctxt "field:quality.stress_environment-quality.test,create_uid:"
+msgid "Create User"
+msgstr "Usuari de creació"
+
+msgctxt "field:quality.stress_environment-quality.test,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.stress_environment-quality.test,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:quality.stress_environment-quality.test,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:quality.stress_environment-quality.test,test:"
+msgid "Quality Test"
+msgstr "Test de qualitat"
+
+msgctxt "field:quality.stress_environment-quality.test,write_date:"
+msgid "Write Date"
+msgstr "Data modificación"
+
+msgctxt "field:quality.stress_environment-quality.test,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:quality.stress_test,create_date:"
+msgid "Create Date"
+msgstr "Data de creació"
+
+msgctxt "field:quality.stress_test,create_uid:"
+msgid "Create User"
+msgstr "Usuari de creació"
+
+msgctxt "field:quality.stress_test,end:"
+msgid "End"
+msgstr "Finalitza"
+
+msgctxt "field:quality.stress_test,environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.stress_test,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:quality.stress_test,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:quality.stress_test,start:"
+msgid "Start"
+msgstr "Inici"
+
+msgctxt "field:quality.stress_test,test:"
+msgid "Quality Test"
+msgstr "Test de qualitat"
+
+msgctxt "field:quality.stress_test,write_date:"
+msgid "Write Date"
+msgstr "Data modificación"
+
+msgctxt "field:quality.stress_test,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:quality.template,environments:"
+msgid "Stress Environments"
+msgstr "Entorn d'estrès"
+
+msgctxt "field:quality.template,equipments:"
+msgid "Equipments"
+msgstr "Equips"
+
+msgctxt "field:quality.template,methods:"
+msgid "Proof Methods"
+msgstr "Mètodes de prova"
+
+msgctxt "field:quality.test,environments:"
+msgid "Stress Environments"
+msgstr "Entorns d'estrès"
+
+msgctxt "field:quality.test,equipments:"
+msgid "Equipments"
+msgstr "Equips"
+
+msgctxt "field:quality.test,methods:"
+msgid "Proof Methods"
+msgstr "Mètodes de prova"
+
+msgctxt "field:quality.test,stress_tests:"
+msgid "Stress Tests"
+msgstr "Prova d'estrès"
+
+msgctxt "model:ir.action,name:act_quality_stress_environment"
+msgid "Stress Environament"
+msgstr "Entorn d'estrès"
+
+msgctxt "model:ir.action,name:act_quality_stress_test"
+msgid "Quality Stress Test"
+msgstr "Prova d'estrès"
+
+msgctxt "model:ir.ui.menu,name:menu_quality_stress_environment"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "model:quality.stress_environment,name:"
+msgid "Quality Stress Environament"
+msgstr "Entorn d'estrès"
+
+msgctxt "model:quality.stress_environment-quality.template,name:"
+msgid "Quality Stress Environment - Quality Template"
+msgstr "Entorn d'estrès - Plantilla de test de qualitat"
+
+msgctxt "model:quality.stress_environment-quality.test,name:"
+msgid "Quality Stress Environment - Quality Test"
+msgstr "Entorn d'estrès - Test de qualitat"
+
+msgctxt "model:quality.stress_test,name:"
+msgid "Quality Stress Test"
+msgstr "Prova d'estrès"
+
+msgctxt "view:quality.stress_environment:"
+msgid "Stress Environment"
+msgstr "Entorn d'estrès"
+
+msgctxt "view:quality.stress_test:"
+msgid "Quality Stress Test"
+msgstr "Prova d'estrès"
+
+msgctxt "view:quality.stress_test:"
+msgid "Quality Stress Tests"
+msgstr "Proves d'estrès"
+
+msgctxt "view:quality.template:"
+msgid "Stress Test"
+msgstr "Prova d'estrès"
+
+msgctxt "view:quality.test:"
+msgid "Stress Test"
+msgstr "Prova d'estrès"
