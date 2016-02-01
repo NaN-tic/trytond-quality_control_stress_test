@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--The COPYRIGHT file at the top level of this repository
+contains the full copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/notebook/page[@id='notes']" position="before">
+        <page string="Stress Test" id="stress_tests">
+            <field name="environments" colspan="4"/>
+            <field name="stress_tests" colspan="4"/>
+        </page>
+    </xpath>
+</data>

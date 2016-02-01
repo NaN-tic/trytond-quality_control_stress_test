@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <!-- quality.stress_environment -->
+        <record model="ir.ui.view" id="quality_stress_environment_form_view">
+            <field name="model">quality.stress_environment</field>
+            <field name="type">form</field>
+            <field name="name">quality_stress_environment_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="quality_stress_environment_tree_view">
+            <field name="model">quality.stress_environment</field>
+            <field name="type">tree</field>
+            <field name="name">quality_stress_environment_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_quality_stress_environment">
+            <field name="name">Stress Environment</field>
+            <field name="res_model">quality.stress_environment</field>
+        </record>
+        <record model="ir.action.act_window.view"
+                id="act_quality_stress_environment_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="quality_stress_environment_tree_view"/>
+            <field name="act_window" ref="act_quality_stress_environment"/>
+        </record>
+        <record model="ir.action.act_window.view"
+                id="act_quality_stress_environment_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="quality_stress_environment_form_view"/>
+            <field name="act_window" ref="act_quality_stress_environment"/>
+        </record>
+
+        <record model="ir.model.access" id="access_quality_stress_environment">
+            <field name="model"
+                search="[('model', '=', 'quality.stress_environment')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access"
+                id="access_quality_stress_environment_admin">
+            <field name="model"
+                search="[('model', '=', 'quality.stress_environment')]"/>
+            <field name="group"
+                ref="quality_control.group_quality_control_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="quality_stress_test_form_view">
+            <field name="model">quality.stress_test</field>
+            <field name="type">form</field>
+            <field name="name">quality_stress_test_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="quality_stress_test_tree_view">
+            <field name="model">quality.stress_test</field>
+            <field name="type">tree</field>
+            <field name="name">quality_stress_test_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_quality_stress_test">
+            <field name="name">Quality Stress Test</field>
+            <field name="res_model">quality.stress_test</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view"
+                id="act_quality_stress_test_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="quality_stress_test_tree_view"/>
+            <field name="act_window" ref="act_quality_stress_test"/>
+        </record>
+        <record model="ir.action.act_window.view"
+                id="act_quality_stress_test_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="quality_stress_test_form_view"/>
+            <field name="act_window" ref="act_quality_stress_test"/>
+        </record>
+
+        <record model="ir.model.access" id="access_quality_stress_test">
+            <field name="model"
+                search="[('model', '=', 'quality.stress_test')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_quality_stress_test_quality">
+            <field name="model"
+                search="[('model', '=', 'quality.stress_test')]"/>
+            <field name="group" ref="quality_control.group_quality_control"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_quality_stress_test_admin">
+            <field name="model"
+                search="[('model', '=', 'quality.stress_test')]"/>
+            <field name="group"
+                ref="quality_control.group_quality_control_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="quality_template_form_view">
+            <field name="model">quality.template</field>
+            <field name="name">quality_template_form</field>
+            <field name="inherit"
+                ref="quality_control.quality_template_form_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_qualitative_template_line_form_view">
+            <field name="model">quality.qualitative.template.line</field>
+            <field name="name">quality_qualitative_template_line_form</field>
+            <field name="inherit"
+                ref="quality_control.quality_qualitative_template_line_form_view"/>
+        </record>
+        <record model="ir.ui.view"
+                id="quality_qualitative_template_line_tree_view">
+            <field name="model">quality.qualitative.template.line</field>
+            <field name="name">quality_qualitative_template_line_tree</field>
+            <field name="inherit"
+                ref="quality_control.quality_qualitative_template_line_tree_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_quantitative_template_line_form_view">
+            <field name="model">quality.quantitative.template.line</field>
+            <field name="name">quality_quantitative_template_line_form</field>
+            <field name="inherit"
+                ref="quality_control.quality_quantitative_template_line_form_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_quantitative_template_line_tree_view">
+            <field name="model">quality.quantitative.template.line</field>
+            <field name="name">quality_quantitative_template_line_tree</field>
+            <field name="inherit"
+                ref="quality_control.quality_quantitative_template_line_tree_view"/>
+        </record>
+
+
+        <record model="ir.ui.view" id="quality_test_form_view">
+            <field name="model">quality.test</field>
+            <field name="name">quality_test_form</field>
+            <field name="inherit" ref="quality_control.quality_test_form_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_qualitative_test_line_form_view">
+            <field name="model">quality.qualitative.test.line</field>
+            <field name="name">quality_qualitative_test_line_form</field>
+            <field name="inherit"
+                ref="quality_control.quality_qualitative_test_line_form_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_qualitative_test_line_tree_view">
+            <field name="model">quality.qualitative.test.line</field>
+            <field name="name">quality_qualitative_test_line_tree</field>
+            <field name="inherit"
+                ref="quality_control.quality_qualitative_test_line_tree_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_quantitative_test_line_form_view">
+            <field name="model">quality.quantitative.test.line</field>
+            <field name="name">quality_quantitative_test_line_form</field>
+            <field name="inherit"
+                ref="quality_control.quality_quantitative_test_line_form_view"/>
+        </record>
+
+        <record model="ir.ui.view"
+                id="quality_quantitative_test_line_tree_view">
+            <field name="model">quality.quantitative.test.line</field>
+            <field name="name">quality_quantitative_test_line_tree</field>
+            <field name="inherit"
+                ref="quality_control.quality_quantitative_test_line_tree_view"/>
+        </record>
+
+        <menuitem action="act_quality_stress_environment"
+            id="menu_quality_stress_environment"
+            parent="quality_control.menu_configuration" sequence="30"/>
+    </data>
+</tryton>
