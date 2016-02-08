@@ -4,4 +4,6 @@ contains the full copyright notices and license terms. -->
 <form string="Stress Environment">
     <label name="name"/>
     <field name="name"/>
+    <label name="template"/>
+    <field name="template"/>
 </form>

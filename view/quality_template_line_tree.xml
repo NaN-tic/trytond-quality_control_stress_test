@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <!--The COPYRIGHT file at the top level of this repository
 contains the full copyright notices and license terms. -->
-<tree string="Stress Environment">
-    <field name="template"/>
-    <field name="name"/>
-</tree>
+<data>
+    <xpath expr="/tree/field[@name='method']" position="after">
+        <field name="environment"/>
+    </xpath>
+</data>

@@ -3,6 +3,6 @@
 contains the full copyright notices and license terms. -->
 <data>
     <xpath expr="/tree/field[@name='method']" position="after">
-        <field name="environment"/>
+        <field name="stress_test"/>
     </xpath>
 </data>

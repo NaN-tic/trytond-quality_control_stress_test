@@ -7,11 +7,10 @@ from .quality import *
 def register():
     Pool.register(
         Environment,
-        EnvironmentTemplate,
         Template,
         QualitativeTemplateLine,
         QuantitativeTemplateLine,
-        EnvironmentTest,
+        TemplateLine,
         StressTest,
         QualityTest,
         QualitativeLine,

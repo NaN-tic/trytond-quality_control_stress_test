@@ -3,7 +3,7 @@
 contains the full copyright notices and license terms. -->
 <data>
     <xpath expr="/form/field[@name='proof']" position="after">
-        <label name="environment"/>
-        <field name="environment"/>
+        <label name="stress_test"/>
+        <field name="stress_test"/>
     </xpath>
 </data>

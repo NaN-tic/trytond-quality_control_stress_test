@@ -112,14 +112,6 @@ Create Quantitative Proof::
     >>> qtproof.methods.append(method2)
     >>> qtproof.save()
 
-Create Test Environaments::
-
-    >>> TestEnvironment = Model.get('quality.stress_environment')
-    >>> high_temperature = TestEnvironment(name='High Temperature')
-    >>> high_temperature.save()
-    >>> low_temperature = TestEnvironment(name='Low Temperature')
-    >>> low_temperature.save()
-
 Look For Values::
 
     >>> method1, = Method.find([('name', '=', 'Method 1')])
@@ -135,13 +127,15 @@ Create Template::
     >>> template.document = product
     >>> template.internal_description='Internal description'
     >>> template.external_description='External description'
-    >>> template.environments.append(TestEnvironment(high_temperature.id))
-    >>> template.environments.append(TestEnvironment(low_temperature.id))
+    >>> _ = template.environments.new(name='High Temperature')
+    >>> _ = template.environments.new(name='Low Temperature')
+    >>> template.save()
+    >>> high_temperature, low_temperature = template.environments
     >>> ql_line = template.qualitative_lines.new()
     >>> ql_line.name = 'Line1'
     >>> ql_line.proof = qlproof
     >>> ql_line.method = method1
-    >>> ql_line.environment = low_temperature
+    >>> ql_line.environment = high_temperature
     >>> ql_line.valid_value = val1
     >>> ql_line.internal_description = 'quality line intenal description'
     >>> ql_line.external_description = 'quality line external description'
@@ -149,7 +143,7 @@ Create Template::
     >>> qt_line.name = 'Quantitative Line'
     >>> qt_line.proof = qtproof
     >>> qt_line.method = method2
-    >>> ql_line.environment = low_temperature
+    >>> qt_line.environment = low_temperature
     >>> qt_line.unit = unit
     >>> qt_line.unit_range = unit
     >>> qt_line.internal_description = 'quality line intenal description'
@@ -170,8 +164,6 @@ Create And assing template to Test::
 
 Test values are assigned corretly::
 
-    >>> len(test.environments)
-    2
     >>> high_stress_test, low_stress_test = test.stress_tests
     >>> high_stress_test.environment == high_temperature
     True
@@ -181,3 +173,9 @@ Test values are assigned corretly::
     True
     >>> low_stress_test.start
     >>> low_stress_test.end
+    >>> ql_line, = test.qualitative_lines
+    >>> ql_line.stress_test == high_stress_test
+    True
+    >>> qt_line, = test.quantitative_lines
+    >>> qt_line.stress_test == low_stress_test
+    True
