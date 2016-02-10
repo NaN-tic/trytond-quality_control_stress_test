@@ -138,6 +138,10 @@ msgctxt "field:quality.test,stress_tests:"
 msgid "Stress Tests"
 msgstr "Pruebas de estres"
 
+msgctxt "field:quality.test.line,stress_test:"
+msgid "Stress Environment"
+msgstr "Entorno de estres"
+
 msgctxt "model:ir.action,name:act_quality_stress_environment"
 msgid "Stress Environment"
 msgstr "Entorno de estres"

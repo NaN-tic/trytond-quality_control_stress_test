@@ -7,7 +7,7 @@ from trytond.modules.quality_control.quality import _STATES
 
 __all__ = ['Environment', 'Template', 'QualitativeTemplateLine',
     'QuantitativeTemplateLine', 'TemplateLine', 'QualityTest', 'StressTest',
-    'QualitativeLine', 'QuantitativeLine']
+    'QualitativeLine', 'QuantitativeLine', 'TestLine']
 __metaclass__ = PoolMeta
 
 
@@ -105,3 +105,7 @@ class QualitativeLine:
 
 class QuantitativeLine(QualitativeLine):
     __name__ = 'quality.quantitative.test.line'
+
+
+class TestLine(QualitativeLine):
+    __name__ = 'quality.test.line'

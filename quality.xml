@@ -202,5 +202,19 @@
             <field name="inherit"
                 ref="quality_control.quality_quantitative_test_line_tree_view"/>
         </record>
+
+        <record model="ir.ui.view" id="quality_test_line_form_view">
+            <field name="model">quality.test.line</field>
+            <field name="name">quality_test_line_form</field>
+            <field name="inherit"
+                ref="quality_control.quality_test_line_form_view"/>
+        </record>
+
+        <record model="ir.ui.view" id="quality_test_line_tree_view">
+            <field name="model">quality.test.line</field>
+            <field name="name">quality_test_line_tree</field>
+            <field name="inherit"
+                ref="quality_control.quality_test_line_tree_view"/>
+        </record>
     </data>
 </tryton>

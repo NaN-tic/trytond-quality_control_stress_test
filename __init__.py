@@ -15,4 +15,5 @@ def register():
         QualityTest,
         QualitativeLine,
         QuantitativeLine,
+        TestLine,
         module='quality_control_stress_test', type_='model')
