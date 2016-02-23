@@ -1,5 +1,6 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
+from itertools import chain, izip
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval
 from trytond.pool import Pool, PoolMeta
@@ -26,6 +27,28 @@ class Template:
     environments = fields.One2Many('quality.stress_environment', 'template',
         'Stress Environments')
 
+    @classmethod
+    def copy(cls, templates, default=None):
+        pool = Pool()
+        TemplateLine = pool.get('quality.template.line')
+        if default is None:
+            default = {}
+        lines = list(chain(*(t.lines for t in templates)))
+        new_templates = super(Template, cls).copy(templates, default)
+        new_lines = list(chain(*(t.lines for t in new_templates)))
+        new_environments = dict(((l.template, l.name), l)
+            for t in new_templates for l in t.environments)
+        to_write = []
+        for old_line, new_line in izip(lines, new_lines):
+            if old_line.environment:
+                to_write.extend(([new_line], {
+                        'environment': new_environments.get((new_line.template,
+                                    old_line.environment.name)),
+                        }))
+        if to_write:
+            TemplateLine.write(*to_write)
+        return new_templates
+
 
 class QualitativeTemplateLine:
     __name__ = 'quality.qualitative.template.line'
@@ -36,6 +59,13 @@ class QualitativeTemplateLine:
             ('template', '=', Eval('template')),
             ],
         depends=['template'])
+
+    @classmethod
+    def copy(cls, lines, default=None):
+        if default is None:
+            default = {}
+        default['environment'] = None
+        return super(QualitativeTemplateLine, cls).copy(lines, default)
 
 
 class QuantitativeTemplateLine(QualitativeTemplateLine):
@@ -91,6 +121,28 @@ class QualityTest:
             if tl.environment:
                 qn.stress_test = mapping.get(tl.environment)
 
+    @classmethod
+    def copy(cls, tests, default=None):
+        pool = Pool()
+        TestLine = pool.get('quality.test.line')
+        if default is None:
+            default = {}
+        lines = list(chain(*(t.lines for t in tests)))
+        new_tests = super(QualityTest, cls).copy(tests, default)
+        new_lines = list(chain(*(t.lines for t in new_tests)))
+        new_stress_tests = dict(((l.test, l.environment.name), l)
+            for t in new_tests for l in t.stress_tests)
+        to_write = []
+        for old_line, new_line in izip(lines, new_lines):
+            if old_line.stress_test:
+                to_write.extend(([new_line], {
+                        'stress_test': new_stress_tests.get((new_line.test,
+                                    old_line.stress_test.environment.name)),
+                        }))
+        if to_write:
+            TestLine.write(*to_write)
+        return new_tests
+
 
 class QualitativeLine:
     __name__ = 'quality.qualitative.test.line'
@@ -101,6 +153,13 @@ class QualitativeLine:
             ('test', '=', Eval('test')),
             ],
         depends=['test'])
+
+    @classmethod
+    def copy(cls, lines, default=None):
+        if default is None:
+            default = {}
+        default['stress_test'] = None
+        return super(QualitativeLine, cls).copy(lines, default)
 
 
 class QuantitativeLine(QualitativeLine):
