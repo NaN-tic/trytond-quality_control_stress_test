@@ -99,25 +99,33 @@ class QualityTest:
     stress_tests = fields.One2Many('quality.stress_test', 'test',
         'Stress Tests', states=_STATES, depends=['state'])
 
-    def set_template_vals(self):
+    def apply_template_values(self):
         pool = Pool()
         StressTest = pool.get('quality.stress_test')
-        super(QualityTest, self).set_template_vals()
+        super(QualityTest, self).apply_template_values()
         StressTest.delete(StressTest.search([('test', '=', self.id)]))
         stress_tests = []
-        for environment in self.template.environments:
-            stress_tests.append({
-                    'environment': environment.id,
-                    'test': self.id,
-                    })
+        templates = [t for t in self.templates]
+        templates_qualitative_lines = []
+        templates_quantitative_lines = []
+        for template in templates:
+            for environment in template.environments:
+                stress_tests.append({
+                        'environment': environment.id,
+                        'test': self.id,
+                        })
+            templates_qualitative_lines.extend(
+                [ql for ql in template.qualitative_lines])
+            templates_quantitative_lines.extend(
+                [ql for ql in template.quantitative_lines])
+
         stress_tests = StressTest.create(stress_tests)
         mapping = dict((s.environment, s) for s in stress_tests)
-        for ql, tl in zip(self.qualitative_lines,
-                self.template.qualitative_lines):
+        for ql, tl in zip(self.qualitative_lines, templates_qualitative_lines):
             if tl.environment:
                 ql.stress_test = mapping.get(tl.environment)
         for qn, tl in zip(self.quantitative_lines,
-                self.template.quantitative_lines):
+                templates_quantitative_lines):
             if tl.environment:
                 qn.stress_test = mapping.get(tl.environment)
 
