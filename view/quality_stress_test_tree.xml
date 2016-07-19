@@ -4,6 +4,8 @@ contains the full copyright notices and license terms. -->
 <tree string="Quality Stress Tests">
     <field name="test"/>
     <field name="environment"/>
-    <field name="start"/>
-    <field name="end"/>
+    <field name="start" widget="date"/>
+    <field name="start" widget="time" string="Start Time"/>
+    <field name="end" widget="date"/>
+    <field name="end" widget="time" string="End Time"/>
 </tree>
