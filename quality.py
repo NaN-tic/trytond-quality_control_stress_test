@@ -9,7 +9,6 @@ from trytond.modules.quality_control.quality import _STATES
 __all__ = ['Environment', 'Template', 'QualitativeTemplateLine',
     'QuantitativeTemplateLine', 'TemplateLine', 'QualityTest', 'StressTest',
     'QualitativeLine', 'QuantitativeLine', 'TestLine']
-__metaclass__ = PoolMeta
 
 
 class Environment(ModelSQL, ModelView):
@@ -23,6 +22,7 @@ class Environment(ModelSQL, ModelView):
 
 class Template:
     __name__ = 'quality.template'
+    __metaclass__ = PoolMeta
 
     environments = fields.One2Many('quality.stress_environment', 'template',
         'Stress Environments')
@@ -52,6 +52,7 @@ class Template:
 
 class QualitativeTemplateLine:
     __name__ = 'quality.qualitative.template.line'
+    __metaclass__ = PoolMeta
 
     environment = fields.Many2One('quality.stress_environment',
         'Stress Environment',
@@ -96,6 +97,8 @@ class StressTest(ModelSQL, ModelView):
 
 class QualityTest:
     __name__ = 'quality.test'
+    __metaclass__ = PoolMeta
+
     stress_tests = fields.One2Many('quality.stress_test', 'test',
         'Stress Tests', states=_STATES, depends=['state'])
 
@@ -154,6 +157,7 @@ class QualityTest:
 
 class QualitativeLine:
     __name__ = 'quality.qualitative.test.line'
+    __metaclass__ = PoolMeta
 
     stress_test = fields.Many2One('quality.stress_test',
         'Stress Environment',
