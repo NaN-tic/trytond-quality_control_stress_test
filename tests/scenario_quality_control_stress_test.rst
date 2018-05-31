@@ -160,7 +160,7 @@ Create And assing template to Test::
     >>> test.name = 'TEST/'
     >>> test.document = product
     >>> test.template = template
-    >>> test.click('set_template')
+    >>> test.click('apply_templates')
 
 Test values are assigned corretly::
 
