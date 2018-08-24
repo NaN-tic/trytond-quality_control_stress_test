@@ -1,6 +1,6 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
-from itertools import chain, izip
+from itertools import chain
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pyson import Eval
 from trytond.pool import Pool, PoolMeta
@@ -20,9 +20,8 @@ class Environment(ModelSQL, ModelView):
     name = fields.Char('Name', required=True)
 
 
-class Template:
+class Template(metaclass=PoolMeta):
     __name__ = 'quality.template'
-    __metaclass__ = PoolMeta
 
     environments = fields.One2Many('quality.stress_environment', 'template',
         'Stress Environments')
@@ -39,7 +38,7 @@ class Template:
         new_environments = dict(((l.template, l.name), l)
             for t in new_templates for l in t.environments)
         to_write = []
-        for old_line, new_line in izip(lines, new_lines):
+        for old_line, new_line in zip(lines, new_lines):
             if old_line.environment:
                 to_write.extend(([new_line], {
                         'environment': new_environments.get((new_line.template,
@@ -50,9 +49,8 @@ class Template:
         return new_templates
 
 
-class QualitativeTemplateLine:
+class QualitativeTemplateLine(metaclass=PoolMeta):
     __name__ = 'quality.qualitative.template.line'
-    __metaclass__ = PoolMeta
 
     environment = fields.Many2One('quality.stress_environment',
         'Stress Environment',
@@ -95,9 +93,8 @@ class StressTest(ModelSQL, ModelView):
         return [tuple('environment.rec_name',) + tuple(clause[1:])]
 
 
-class QualityTest:
+class QualityTest(metaclass=PoolMeta):
     __name__ = 'quality.test'
-    __metaclass__ = PoolMeta
 
     stress_tests = fields.One2Many('quality.stress_test', 'test',
         'Stress Tests', states=_STATES, depends=['state'])
@@ -144,7 +141,7 @@ class QualityTest:
         new_stress_tests = dict(((l.test, l.environment.name), l)
             for t in new_tests for l in t.stress_tests)
         to_write = []
-        for old_line, new_line in izip(lines, new_lines):
+        for old_line, new_line in zip(lines, new_lines):
             if old_line.stress_test:
                 to_write.extend(([new_line], {
                         'stress_test': new_stress_tests.get((new_line.test,
@@ -155,9 +152,8 @@ class QualityTest:
         return new_tests
 
 
-class QualitativeLine:
+class QualitativeLine(metaclass=PoolMeta):
     __name__ = 'quality.qualitative.test.line'
-    __metaclass__ = PoolMeta
 
     stress_test = fields.Many2One('quality.stress_test',
         'Stress Environment',

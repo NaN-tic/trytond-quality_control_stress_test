@@ -93,8 +93,8 @@ class TestCase(ModuleTestCase):
             quality_template, = QualityTemplate.create([{
                         'name': 'Template 1',
                         'document': str(product),
-                        'internal_description': u'Internal description',
-                        'external_description': u'External description',
+                        'internal_description': 'Internal description',
+                        'external_description': 'External description',
                         'environments': [('create', [{
                                         'name': 'High Temperature',
                                         }, {
