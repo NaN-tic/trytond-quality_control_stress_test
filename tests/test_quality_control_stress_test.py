@@ -44,7 +44,6 @@ class TestCase(ModuleTestCase):
                         'default_uom': unit.id,
                         'type': 'goods',
                         'list_price': Decimal(30),
-                        'cost_price': Decimal(20),
                         }])
             product, = Product.create([{
                         'template': template.id,
