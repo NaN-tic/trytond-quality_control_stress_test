@@ -6,10 +6,6 @@ from trytond.pyson import Eval
 from trytond.pool import Pool, PoolMeta
 from trytond.modules.quality_control.quality import _STATES
 
-__all__ = ['Environment', 'Template', 'QualitativeTemplateLine',
-    'QuantitativeTemplateLine', 'TemplateLine', 'QualityTest', 'StressTest',
-    'QualitativeLine', 'QuantitativeLine', 'TestLine']
-
 
 class Environment(ModelSQL, ModelView):
     'Quality Stress Environament'
