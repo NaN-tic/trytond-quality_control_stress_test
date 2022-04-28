@@ -1,17 +1,18 @@
-# The COPYRIGHT file at the top level of this repository contains the full
-# copyright notices and license terms.
-import unittest
+
+# This file is part of Tryton.  The COPYRIGHT file at the top level of
+# this repository contains the full copyright notices and license terms.
+
 from decimal import Decimal
 
-import trytond.tests.test_tryton
 from trytond.pool import Pool
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 
-from trytond.modules.company.tests import create_company, set_company
+from trytond.modules.company.tests import (CompanyTestMixin, create_company,
+    set_company)
 
 
-class TestCase(ModuleTestCase):
-    'Test module'
+class QualityControlStressTestTestCase(CompanyTestMixin, ModuleTestCase):
+    'Test QualityControlStressTest module'
     module = 'quality_control_stress_test'
 
     @with_transaction()
@@ -151,7 +152,4 @@ class TestCase(ModuleTestCase):
             self.assertEqual(qt_line.stress_test, low_stress_test)
 
 
-def suite():
-    suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestCase))
-    return suite
+del ModuleTestCase
