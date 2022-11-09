@@ -12,7 +12,7 @@ class Environment(ModelSQL, ModelView):
     __name__ = 'quality.stress_environment'
 
     template = fields.Many2One('quality.template', 'Quality Template',
-        required=True, select=True, ondelete='CASCADE')
+        required=True, ondelete='CASCADE')
     name = fields.Char('Name', required=True)
 
 
