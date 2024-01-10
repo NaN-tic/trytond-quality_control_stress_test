@@ -93,7 +93,7 @@ class QualityTest(metaclass=PoolMeta):
     __name__ = 'quality.test'
 
     stress_tests = fields.One2Many('quality.stress_test', 'test',
-        'Stress Tests', states=_STATES, depends=['state'])
+        'Stress Tests', states=_STATES)
 
     def apply_template_values(self):
         pool = Pool()
