@@ -52,8 +52,7 @@ class QualitativeTemplateLine(metaclass=PoolMeta):
         'Stress Environment',
         domain=[
             ('template', '=', Eval('template')),
-            ],
-        depends=['template'])
+            ])
 
     @classmethod
     def copy(cls, lines, default=None):
@@ -155,8 +154,7 @@ class QualitativeLine(metaclass=PoolMeta):
         'Stress Environment',
         domain=[
             ('test', '=', Eval('test')),
-            ],
-        depends=['test'])
+            ])
 
     @classmethod
     def copy(cls, lines, default=None):
