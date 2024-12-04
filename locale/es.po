@@ -150,10 +150,6 @@ msgctxt "model:ir.action,name:act_quality_stress_test"
 msgid "Quality Stress Test"
 msgstr "Prueba de estres"
 
-msgctxt "model:ir.ui.menu,name:"
-msgid "Stress Environment"
-msgstr "Entorno de estres"
-
 msgctxt "model:quality.stress_environment,name:"
 msgid "Quality Stress Environament"
 msgstr "Entorno de estres"
