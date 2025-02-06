@@ -53,7 +53,7 @@ class QualityControlStressTestTestCase(CompanyTestMixin, ModuleTestCase):
             # Configure Quality Control
             sequence, = Sequence.search([('sequence_type.name', '=',
                         'Quality Control')])
-            allowed_doc, = Model.search([('model', '=', 'product.product')])
+            allowed_doc, = Model.search([('name', '=', 'product.product')])
             CualityConfiguration.create([{
                         'allowed_documents': [('create', [{
                                             'quality_sequence': sequence.id,
